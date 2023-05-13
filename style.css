@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 10%;
+}
+
+.logo img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.navmenu {
+    display: flex;
+}
+
+.navmenu a {
+    color: #886948;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all.42s;
+}
+
+.navmenu a:hover {
+    color: #FF3000;
+}
+
+.navmenu .active {
+    color: #FF3000;
+}
+
+#menu-icon {
+    font-size: 35px;
+    color: #FF3000;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+
+}
+
+section {
+    padding: 0 14%;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(image/bg2.jpg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.text h5 {
+    color: #886948;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.text h1 {
+    font-size: 3.70rem;
+    color: #EBF0FF;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.gradient-text-orange {
+    background: linear-gradient(315deg, #FBBC00 0%, #E53925 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text p {
+    font-size: 15px;
+    color: #EBF0FF;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    margin-bottom: 2.25rem;
+}
+
+.text a {
+    display: inline-block;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    padding: 12px 30px;
+    border-radius: 4px;
+    background: linear-gradient(315deg, #FB8C00 0%, #E53935 74%);
+    transition: all.42s;
+}
+
+.text .btn {
+    margin-left: 20px;
+}
+
+.main-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.main-img img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    animation-name: slide;
+    animation-duration: 4s;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.arrow {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 12%;
+    bottom: 40px;
+}
+
+.arrow a {
+    color: #EBF0FF;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.arrow span {
+    color: #EBF0FF;
+    border: 2px solid #EBF0FF;
+    padding: 3px 3px;
+    border-radius: 50%;
+    margin-left: 10px;
+    transition: all .42s;
+}
+
+.arrow span i:hover {
+    transform: translateY(-5px);
+}
+
+/*resopsive design*/
+
+
+@media(max-width:1315px) {
+    header {
+        padding: 25px 4%;
+        transition: .3s;
+    }
+}
+
+@media(max-width:1195px) {
+    .text h1 {
+        font-size: 50px;
+        transition: .3s;
+
+    }
+
+    .text h5 {
+        font-size: 17px;
+        transition: .3s;
+
+    }
+
+    .text p {
+        font-size: 11px;
+        transition: .3s;
+
+    }
+
+    .main-img img {
+        max-width: 100%;
+        width: 400px;
+        height: auto;
+        transition: .3s;
+    }
+}
+
+@media(max-width:1055px) {
+    .main {
+        grid-template-columns: 1fr;
+        height: 100vh;
+
+    }
+
+    .text {
+        padding-top: 100px;
+        text-align: center;
+    }
+
+    .main-img {
+
+        text-align: center;
+    }
+}
+@media(max-width:920px) {
+    .arrow{
+        display: none;
+    }
+}
+@media(max-width:940px) {
+  #menu-icon{
+    display: block;
+  }
+  .navmenu{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 300px;
+    padding: 40px;
+    background-color: #16061D;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .42s;
+  }
+  .navmenu a{
+   display: block;
+   margin: 10px 0;
+   transition: all .42s;
+
+  }
+  .navmenu a:hover{
+    transform: translateY(-5px);
+  }
+  .navmenu.open{
+    right: 0;
+  }
+}
